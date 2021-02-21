@@ -1,0 +1,21 @@
+<header id="header">
+    <nav class="title-bar" data-topbar="" role="navigation">
+        <div class="title-bar-title">
+            <h2>
+                <a href="/">
+                    <img src="/img/logo-ffmyk.35x35.png"/>{{ .Site.Title }}
+                </a>
+            </h2>
+        </div>
+        <div class="title-bar-nav">
+            <ul class="menu">
+                {{ range .Site.Menus.main }}
+                <li>
+                    {{ $text := print .Name | safeHTML }}
+                    <a href="{{ .URL }}" {{ if hasPrefix .URL "http" }}target="_blank"{{ end }}>{{ $text }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </nav>
+</header>

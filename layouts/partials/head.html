@@ -1,0 +1,15 @@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title := .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+    {{ $sass := resources.Get "scss/application.scss" }}
+    {{ $style := $sass | resources.ToCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
+    {{ $fa := resources.Get "fontawesome/fontawesome.scss" | resources.ToCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $fa.Permalink }}" integrity="{{ $fa.Data.Integrity }}" />
+   
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+</head>
