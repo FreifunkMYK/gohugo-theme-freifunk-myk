@@ -161,6 +161,12 @@ p {
     max-width: $max-page-width;
 }
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 button.expand, .button.expand {
     padding: 1rem 2rem 1.0625rem 2rem;
     font-size: 1rem;
@@ -175,12 +181,10 @@ button, .button {
     display: inline-block;
 }
 
-
-Element {
-}
 .panel > :last-child {
     margin-bottom: 0;
 }
+
 button.expand, .button.expand {
     padding: 1rem 2rem 1.0625rem 2rem;
     font-size: 1rem;
@@ -190,9 +194,11 @@ button.expand, .button.expand {
     padding-right: 1rem;
     width: 100%;
 }
+
 button, .button {
     display: inline-block;
 }
+
 button, .button {
     -webkit-appearance: none;
     -moz-appearance: none;
