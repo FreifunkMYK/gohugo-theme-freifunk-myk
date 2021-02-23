@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-<div class="grid-container">
+<div class="grid-x-6 container">
   <section id='article'>
     {{ $dateFormat := .Site.Params.dateFormat | default "06 Jan 2006" }}
     {{ range .Pages.ByPublishDate.Reverse }}
 
       <article class='row article'>
-        <div class='medium-3 columns'>
+        <div class='featured-image'>
           {{ $img := (.Resources.ByType "image").GetMatch "images/*featured*" }}
           {{ with $img }}
             {{ $image := .}}
@@ -28,7 +28,6 @@
           </p>
         </div>
       </article>
-      <hr>
 
     {{ end }}
   </section>

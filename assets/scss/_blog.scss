@@ -6,3 +6,16 @@
 #sidebar {
     grid-column: 6 / end;
 }
+
+#article > article {
+    display: grid;
+    grid-template-columns: 190px auto;
+    grid-gap: 10px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+
+    .featured-image {
+        justify-self: start;
+    }
+}

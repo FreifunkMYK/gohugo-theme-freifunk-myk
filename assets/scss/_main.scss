@@ -26,6 +26,8 @@ body {
     padding: 0;
     padding-top: 0px;
     position: relative;
+    display: grid;
+    grid-template-rows: [header] $header-height [main] auto [footer] $footer-height;
 }
 
 a {
@@ -121,9 +123,10 @@ p {
     background: #f2f2f2;
 }
 
-#container {
+#main-container {
     padding-top: $header-height;
     float: none;
+    grid-row: main;
 }
 
 .info-box {
@@ -148,4 +151,8 @@ p {
         list-style: none;
         margin-left: 1.375rem;
     }
+}
+
+.container {
+    max-width: $max-page-width;
 }

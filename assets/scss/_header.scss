@@ -4,6 +4,7 @@
     width: 100%;
     z-index: 99;
     left: 0;
+    grid-row: header;
 
     color: $header-color;
     background: $header-background;
@@ -19,7 +20,7 @@
     justify-content: space-between;
     margin: 0 auto;
     height: $header-height;
-    max-width: 73.125rem;
+    max-width: $max-page-width;
     overflow: visible;
     position: relative;
     line-height: $header-height !important;
@@ -31,7 +32,6 @@
 
 #header .title-bar-title h2 {
     font-size: 1.125rem;
-    padding: 0 .9375rem;
     font-weight: bold;
 }
 
@@ -41,9 +41,6 @@
     margin-right: 5px;
 }
 
-#header .title-bar-title h2 a {
-    padding: 0 .9375rem;
-}
 .title-bar-nav {
     float: right;
 
