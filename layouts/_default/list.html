@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-<div class="grid-x-6 container">
-  <section id='article'>
+<div class="grid-blog container">
+  <section id='article' class='article-list'>
     {{ $dateFormat := .Site.Params.dateFormat | default "06 Jan 2006" }}
     {{ range .Pages.ByPublishDate.Reverse }}
 
@@ -24,7 +24,7 @@
           <h4 class='tobheader'><small></small></h4>
           <a href='{{ .RelPermalink }}'><h3>{{ .Title }}</h3></a>
           <p>
-          {{ .Summary }}
+            {{ slicestr .Summary 0 300}} <a href='{{ .RelPermalink }}'>Weiterlesen</a>
           </p>
         </div>
       </article>

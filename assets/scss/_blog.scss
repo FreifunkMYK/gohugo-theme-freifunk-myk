@@ -1,21 +1,21 @@
-
-#article {
-    grid-column: 1 / span 5;
-}
-
-#sidebar {
-    grid-column: 6 / end;
-}
-
 #article > article {
     display: grid;
     grid-template-columns: 190px auto;
     grid-gap: 10px;
-    border-bottom: 1px solid #000;
     margin-bottom: 20px;
     padding-bottom: 5px;
 
     .featured-image {
         justify-self: start;
     }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.article-list > article{
+    border-bottom: 1px solid rgb(199, 199, 199);
 }
