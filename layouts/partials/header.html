@@ -9,11 +9,17 @@
         </div>
         <div class="title-bar-nav">
             <ul class="menu">
+                {{ $current := . }}
                 {{ range .Site.Menus.main }}
-                <li>
-                    {{ $text := print .Name | safeHTML }}
-                    <a href="{{ .URL }}" {{ if hasPrefix .URL "http" }}target="_blank"{{ end }}>{{ $text }}</a>
-                </li>
+                    {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+                    {{ $active = or $active (eq .Name $current.Title) }}
+                    {{ $active = or $active (and (eq (trim (path.Dir .URL) "/") $current.Section) (ne $current.Section "")) }}
+
+
+                    <li {{if $active }}class='active'{{end}}>
+                        {{ $text := print .Name | safeHTML }}
+                        <a href="{{ .URL }}" {{ if hasPrefix .URL "http" }}target="_blank"{{ end }}>{{ $text }}</a>
+                    </li>
                 {{ end }}
             </ul>
         </div>

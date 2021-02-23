@@ -63,25 +63,32 @@
     }
 }
 
-
-
 .menu {
     list-style: none;
     font-size: 16px;
 }
 
-.menu li {
+.menu > li {
     float: left;
+    line-height: $header-height;
+
+    a {
+        padding: 0 .9375rem;
+        font-size: .8125rem;
+        font-weight: bold;
+        text-transform: none;
+        width: auto;  
+    }
+
+    &:hover a{
+        color: $header-li-hover-color !important;
+    }
 }
 
-.menu li a {
-    padding: 0 .9375rem;
-    font-size: .8125rem;
-    font-weight: bold;
-    text-transform: none;
-    width: auto;
-}
+.menu .active {
+        background-color: $header-li-hover-color;
 
-#header .menu li:hover a {
-    color: $header-li-hover-color;
+        &:hover a{
+            color: $header-color !important;
+        }
 }
