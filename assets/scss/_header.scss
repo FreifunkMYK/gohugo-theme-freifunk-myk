@@ -1,0 +1,87 @@
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+
+    color: $header-color;
+    background: $header-background;
+}
+
+#header a {
+    color: $header-link-color;
+}
+
+#header .title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: $header-height;
+    max-width: 73.125rem;
+    overflow: visible;
+    position: relative;
+    line-height: $header-height !important;
+}
+
+#header .title-bar-title {
+    float: left;
+}
+
+#header .title-bar-title h2 {
+    font-size: 1.125rem;
+    padding: 0 .9375rem;
+    font-weight: bold;
+}
+
+#header .title-bar-title h2 img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#header .title-bar-title h2 a {
+    padding: 0 .9375rem;
+}
+.title-bar-nav {
+    float: right;
+
+    &ul {
+        height: auto;
+        width: auto;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    &li.active:not(.has-form) a:not(.button) {
+        background: $header-li-hover-color;
+        color: $header-color;
+        padding: 0 .9375rem;
+    }
+}
+
+
+
+.menu {
+    list-style: none;
+    font-size: 16px;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    padding: 0 .9375rem;
+    font-size: .8125rem;
+    font-weight: bold;
+    text-transform: none;
+    width: auto;
+}
+
+#header .menu li:hover a {
+    color: $header-li-hover-color;
+}

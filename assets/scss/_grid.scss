@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    max-width: 73.125rem;
+    margin: 0 auto;
+    grid-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-x-3 {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: auto auto auto;
+}
+
+.footer-left {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.footer-right {
+    grid-column-start: 5;
+    grid-column-end: end;
+}
