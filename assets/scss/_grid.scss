@@ -19,3 +19,9 @@
     grid-column-start: 5;
     grid-column-end: end;
 }
+
+.grid-blog {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: auto 250px; 
+}
