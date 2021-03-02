@@ -21,7 +21,7 @@
           {{ end }}
         </div>
         <div class='medium-9 columns'>
-          <h4 class='tobheader'><small></small></h4>
+          <h4 class='tobheader'><small>{{ .PublishDate.Format $dateFormat }}</small></h4>
           <a href='{{ .RelPermalink }}'><h3>{{ .Title }}</h3></a>
           <p>
             {{ .Summary }} <a href='{{ .RelPermalink }}'>Weiterlesen</a>
