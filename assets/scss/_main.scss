@@ -28,6 +28,7 @@ body {
     position: relative;
     display: grid;
     grid-template-rows: [header] $header-height [main] auto [footer] $footer-height;
+    overflow-y: scroll;
 }
 
 a {
