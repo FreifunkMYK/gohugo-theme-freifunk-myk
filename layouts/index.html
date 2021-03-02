@@ -88,8 +88,8 @@
     
       <div class='timeline'>
         {{ $dateFormat := .Site.Params.dateFormat | default "06 Jan 2006" }}
-        {{ range $i,$p := where .Site.Pages.ByPublishDate.Reverse "Params.timeline" true }}
-        <div class="timeline-entry {{ if modBool $i 1 }} timeline-inverted{{end}}">
+        {{ range $i,$p := first 5 (where .Site.Pages.ByPublishDate.Reverse "Params.timeline" true) }}
+        <div class="timeline-entry {{ if modBool $i 2 }} timeline-inverted{{end}}">
           <div class='timeline-point'>
             <div class='timeline-image'>
               {{ $img := (.Resources.ByType "image").GetMatch "images/*featured*" }}
