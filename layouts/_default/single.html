@@ -7,9 +7,8 @@
         {{ $img := (.Resources.ByType "image").GetMatch "images/*featured*" }}
         {{ with $img }}
           {{ $image := .}}
-
           {{ if lt $img.Width 190 }}
-            {{ $image = .Fill "190x top" }}
+            {{ $image = .Resize "190x top" }}
           {{ else }}
             {{ $image = .Resize "190x" }}
           {{ end }}
