@@ -24,7 +24,7 @@
           <h4 class='tobheader'><small></small></h4>
           <a href='{{ .RelPermalink }}'><h3>{{ .Title }}</h3></a>
           <p>
-            {{ slicestr .Summary 0 300}} <a href='{{ .RelPermalink }}'>Weiterlesen</a>
+            {{ .Summary }} <a href='{{ .RelPermalink }}'>Weiterlesen</a>
           </p>
         </div>
       </article>
