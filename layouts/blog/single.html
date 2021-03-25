@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class='grid-blog container'>
+{{ $dateFormat := .Site.Params.dateFormat | default "06 Jan 2006" }}
+  <section id="article">
+    <article class='row article'>
+      <div class='featured-image'>
+        {{ $img := (.Resources.ByType "image").GetMatch "images/*featured*" }}
+        {{ with $img }}
+          {{ $image := .}}
+          {{ if lt $img.Width 190 }}
+            {{ $image = .Resize "190x top" }}
+          {{ else }}
+            {{ $image = .Resize "190x" }}
+          {{ end }}
+
+          <img srcset="{{ $image.RelPermalink }}" alt="{{ $image.Title }}" class="mw-100 b--light-gray ba">
+        {{ end }}
+      </div>
+      <div class='medium-9 columns'>
+        <h4 class='tobheader'><small>{{ .PublishDate.Format $dateFormat }}</small></h4>
+        <h1>{{ .Title }}</h1>
+        <p>
+        {{ .Content }}
+        </p>
+        <hr />
+        <span class="author">
+            {{ range .Params.authors }}
+            <i class="fa fa-user"></i> {{ . }}
+            {{ end }}
+        </span>
+      </div>
+    </article>
+  </section>
+  <section id='sidebar'>
+    <div class='panel'>
+      <h5>Mitmachen</h5>
+      <p>
+        Unterstütze Freifunk und stelle deinen eigenen Freifunk-Router
+        auf um das Netz zu erweitern.
+      </p>
+      <a href='/#mitmachen' class='button expand'>Informier dich jetzt!</a>
+    </div>
+  </section>
+</div>
+{{ end }}
